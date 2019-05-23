@@ -1,1 +1,1 @@
-There are numerical algorithms.
+There are some numerical algorithms implemented in Java.

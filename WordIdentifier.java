@@ -1,46 +1,45 @@
-
 /**
- * ½«ÕıÔò±í´ïÊ½Àà½øÒ»²½·â×°³É µ¥´Ê¸öÊı¼ì²âÀà
- * ¹¦ÄÜ : 
- * (1)Í¨¹ı´«ÈëÄ¿±ê×Ö·û´®À´¹¹ÔìÒ»¸ö WordIdentifier Àà
- * (2)½øĞĞÆ¥Åä£¬µÃµ½½á¹û
- * (3)Êä³öÆ¥ÅäµÄ½á¹û (Ã¿¸öÆ¥Åä½á¹ûµ¥¶ÀÊä³ö)
- * (4)Êä³ö ½«µ¥¸ö½á¹ûÆ´½ÓÆğÀ´µÄ ½á¹û×Ö·û´®
- * (5)·µ»ØÄ¿±ê×Ö·û´®ÖĞµÄµ¥´Ê¸öÊı
+ * å°†æ­£åˆ™è¡¨è¾¾å¼ç±»è¿›ä¸€æ­¥å°è£…æˆ å•è¯ä¸ªæ•°æ£€æµ‹ç±»
+ * åŠŸèƒ½ : 
+ * (1)é€šè¿‡ä¼ å…¥ç›®æ ‡å­—ç¬¦ä¸²æ¥æ„é€ ä¸€ä¸ª WordIdentifier ç±»
+ * (2)è¿›è¡ŒåŒ¹é…ï¼Œå¾—åˆ°ç»“æœ
+ * (3)è¾“å‡ºåŒ¹é…çš„ç»“æœ (æ¯ä¸ªåŒ¹é…ç»“æœå•ç‹¬è¾“å‡º)
+ * (4)è¾“å‡º å°†å•ä¸ªç»“æœæ‹¼æ¥èµ·æ¥çš„ ç»“æœå­—ç¬¦ä¸²
+ * (5)è¿”å›ç›®æ ‡å­—ç¬¦ä¸²ä¸­çš„å•è¯ä¸ªæ•°
  * 
  * @author Pro_ALK416
  *
  */
 class WordIdentifier{
-	private String finalOutput="";				//½«Ê¶±ğµÄµ¥´Ê·Ö¸ô¿ª½øĞĞÊä³ö
-	private String sourceString;				//ÓÃÓÚÊ¶±ğµÄ×Ö·û´®
-	private String regexString="[a-zA-Z]+";		//Æ¥Åä¹æÔò
-	private int wordCount=0;					//µ¥´Ê¸öÊı¼ÆÊı
+	private String finalOutput="";				//å°†è¯†åˆ«çš„å•è¯åˆ†éš”å¼€è¿›è¡Œè¾“å‡º
+	private String sourceString;				//ç”¨äºè¯†åˆ«çš„å­—ç¬¦ä¸²
+	private String regexString="[a-zA-Z]+";		//åŒ¹é…è§„åˆ™
+	private int wordCount=0;					//å•è¯ä¸ªæ•°è®¡æ•°
 	
 	private Pattern p;
 	private Matcher m;
 	
-	public WordIdentifier(String SOURCE_STRING){		//¹¹Ôìº¯Êı£¬³õÊ¼»¯Ä¿±ê×Ö·û´®
+	public WordIdentifier(String SOURCE_STRING){		//æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–ç›®æ ‡å­—ç¬¦ä¸²
 		
 		sourceString=SOURCE_STRING;
 		
 	}
 	
-	public void matching(){			//½øĞĞ×Ö·û´®µÄÆ¥Åä
+	public void matching(){			//è¿›è¡Œå­—ç¬¦ä¸²çš„åŒ¹é…
 		
 		p=Pattern.compile(regexString);
 		m=p.matcher(sourceString);
 		
 	}
 	
-	public void resultPrint(){			//Êä³ö½á¹û
+	public void resultPrint(){			//è¾“å‡ºç»“æœ
 		
 		System.out.println("Input : "+sourceString);
 
 		while(m.find()){
-			System.out.println("ÆğÊ¼Ë÷Òı:"+m.start());
-			System.out.println("½áÎ²Ë÷Òı:"+m.end());
-			System.out.println("Æ¥Åäµ½µÄ×Ö·û´®:"+m.group());
+			System.out.println("èµ·å§‹ç´¢å¼•:"+m.start());
+			System.out.println("ç»“å°¾ç´¢å¼•:"+m.end());
+			System.out.println("åŒ¹é…åˆ°çš„å­—ç¬¦ä¸²:"+m.group());
 			System.out.println("--------------------------");
 			wordCount++;
 			finalOutput+=" "+m.group();
@@ -49,13 +48,13 @@ class WordIdentifier{
 	}
 	
 	
-	public void printSplittedString(){		//Êä³ö´¦ÀíºóµÄºÏ²¢×Ö·û´®
+	public void printSplittedString(){		//è¾“å‡ºå¤„ç†åçš„åˆå¹¶å­—ç¬¦ä¸²
 		
 		System.out.println(finalOutput);
 		
 	}
 	
-	public int returnWordCount(){			//·µ»Øµ¥´Ê¸öÊı
+	public int returnWordCount(){			//è¿”å›å•è¯ä¸ªæ•°
 		
 		return (wordCount);
 		

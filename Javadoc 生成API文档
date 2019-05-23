@@ -1,0 +1,20 @@
+简介 javadoc 命令 : 
+(来自百度百科)
+javadoc是Sun公司提供的一个技术，它从程序源代码中抽取类、方法、成员等注释形成一个和源代码配套的API帮助文档。
+也就是说，只要在编写程序时以一套特定的标签作注释，在程序编写完成后，通过Javadoc就可以同时形成程序的开发文档了。
+
+使用方法 : 
+经过段时间的探索,掌握了javadoc命令的最简单的使用方式
+(1)首先在 cmd 跳转到需要生成文档的 java 源文件目录下
+(2)然后通过 javadoc [options] [packagenames] [sourcefiles] [@files] 的语法来生成文档
+    以简单的生成文档来说 : javadoc <java源文档名 (.java)> -author <作者名> -d <指定生成的文档地址>
+    
+    其中 尖括号是为了标记需要输入的内容，例如 
+    
+    <java源文档名 (.java)> 的一个例子为 : helloWorld.java
+    -author <作者名> 的一个例子为 : -author ALK416
+    -d <指定生成的文档地址> : -d D:\Java_Workspace\JavadocFiles
+    
+ (3)然后在指定的目录下便可以看到自动生成的一些html有关文件,其中 index.html 即为目标文件
+ (4)补充 : javadoc 命令还有很多参数,可以实现很多别的追加效果
+    可以在 cmd 中输入 javadoc 来查看帮助文档

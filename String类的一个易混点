@@ -1,0 +1,16 @@
+在 Java 中，一般构造 String 对象时使用两种形式 : 
+		(1)String str1 = "Student";
+		(2)String str3 = new String("Student");
+		
+值得注意的是，第一种方法中,等号右侧的 "Student" 并不仅仅是一个字符串，而是被存储在对象中的(字符串常量)
+(Java编译器自动为每个字符串常量创建一个对象,当发生 字符串变量 <- 字符串常量 的情况时,编译器将字符串常量对象传递给字符串变量对象)
+
+因而对于以下代码 : 
+
+		String str1 = "Student";
+		String str2 = "Student";
+		
+		String str3 = new String("Student");
+		String str4 = new String("Student");
+		
+		str1==str2 将为 true,这并不是因为他们所存储的值一样,而是他们指向的内存区域完全相同(地址相同)

@@ -14,3 +14,6 @@
 		String str4 = new String("Student");
 		
 		str1==str2 将为 true,这并不是因为他们所存储的值一样,而是他们指向的内存区域完全相同(地址相同)
+		
+
+而 str3==str4 将为 false.这是因为虽然存储的字符串相同，但是 str3 与 str4 是两个不同的对象，占用着不同的空间

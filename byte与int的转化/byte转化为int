@@ -1,0 +1,13 @@
+从byte类型转化为int类型需要用到位运算
+
+总体思路 : 
+int为四字节存储，而byte类型是一个字节存储
+因而可以将一个长度为4的byte数组转化为一个int类型的变量
+假设一个byte数组 tempByte[4]
+其中 tempByte[0],tempByte[1],tempByte[2]均为0
+再将需要转化的byte变量赋到 tempByte[3]中即可
+
+将tempByte[4]从高到低直接对应到int变量的高位到地位中，就实现了byte->int的转化
+
+为了方便使用，实现了 byte->int 与 byet[] -> int[] 的转化
+见文件 byteToInt.java
